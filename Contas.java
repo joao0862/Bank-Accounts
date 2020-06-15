@@ -63,6 +63,16 @@ public class Contas {
 		}
 	}
 	
+	public void transferencia(Contas continha, double valor) {
+		if((valor>this.saldo) || (valor>5000)) {
+			System.out.println("Não efetuado.");
+		}else {
+			this.saldo -= valor;
+			continha.saldo += valor;
+			System.out.println("Efetuado.");
+		}
+	}
+	
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
