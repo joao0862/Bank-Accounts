@@ -9,6 +9,7 @@ public class Contas {
 	private String agencia;
 	private Data data;
 	private String cidade;
+	private String CPF;
 	private static int NumeroContas;
 
 	
@@ -20,10 +21,11 @@ public class Contas {
 		this.agencia = null;
 		this.data = new Data();
 		this.cidade = null;
+		this.CPF = null;
 		Contas.NumeroContas += 1;
 	}
 	
-	public Contas(String titular, double saldo, int conta, String agencia, int dia, int mes, int ano, String cidade) {
+	public Contas(String titular, double saldo, int conta, String agencia, int dia, int mes, int ano, String cidade, String cpf) {
 		System.out.println("Início");
 		this.titular = titular;
 		this.saldo = saldo;
@@ -31,6 +33,7 @@ public class Contas {
 		this.agencia = agencia;
 		this.data = new Data(dia, mes, ano);
 		this.cidade = cidade;
+		this.CPF = cpf;
 		Contas.NumeroContas += 1;
 	}
 	
@@ -42,6 +45,7 @@ public class Contas {
 		dado += "\nAgência: " + this.agencia;
 		dado += "\nData de abertura: " + this.data.DataFormatada();
 		dado += "\nCidade: " + this.cidade;
+		dado += "\nCPF: " + this.CPF;
 		dado += "\nContas criadas: " + Contas.NumeroContas;
 		return dado;	
 	}
